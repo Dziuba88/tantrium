@@ -138,6 +138,10 @@ h4 {
       border-bottom: 1px dashed $prm;
       padding-bottom: 2px;
       margin-right: 20px;
+
+      @include tabletScreenDown {
+        display: none;
+      }
     }
 
     .phone {
@@ -215,11 +219,103 @@ h4 {
         }
       }
     }
+
+    a.auth {
+      display: none;
+      color: $sec;
+      font-size: 12px;
+      text-transform: uppercase;
+      border-bottom: 1px dashed $prm;
+      padding-bottom: 2px;
+      margin-right: 20px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: 0.15s linear;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__control {
+    display: none;
+
+    .toggle {
+      background: transparent;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      color: $prm;
+      font-size: 48px;
+      transition: 0.15s linear;
+
+      &:active {
+        color: $prm;
+        opacity: 1;
+      }
+
+      &.active {
+        color: $sec;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  @include tabletScreenDown {
+    position: static;
+
+    &__wraper {
+      flex-wrap: wrap;
+    }
+    &__content {
+      order: 5;
+      flex: none;
+      overflow: hidden;
+      width: 100%;
+      height: 0;
+      opacity: 0;
+      padding: 0;
+      display: block;
+      transition: opacity 0.15s 0.25s ease-in-out;
+      text-align: center;
+
+      &.show {
+        height: auto;
+        padding: 10px 0;
+        opacity: 1;
+        border-top: 1px solid $prm;
+        margin-top: 10px;
+      }
+
+      a.auth {
+        display: inline-block;
+      }
+    }
+
+    &__control {
+      display: block;
+      flex: 1;
+      text-align: right;
+    }
+  }
+
+  @include smallScreenDown {
+    &__content {
+      .nav {
+        margin-bottom: 20px;
+        ul li {
+          display: block;
+          border-bottom: 1px solid rgba($sec, 0.15);
+        }
+      }
+    }
   }
 }
 
 .wellcome {
   padding-top: 114px;
+
   &:before {
     display: block;
     width: 100%;
@@ -227,12 +323,17 @@ h4 {
     content: "";
     background: url(../img/ornament_1.svg) repeat-x top center;
     background-size: auto 60px;
+
+    @include smallScreenDown {
+      height: 30px;
+      background-size: auto 30px;
+    }
   }
 
   &__img {
     display: block;
     margin: -30px auto 30px;
-    max-width: 100%;
+    max-width: 70%;
     user-select: none;
   }
 
@@ -248,7 +349,7 @@ h4 {
   }
 
   &__carousel {
-    padding-top: 30px;
+    //padding-top: 30px;
     margin-bottom: 50px;
 
     .owl-nav {
@@ -333,10 +434,41 @@ h4 {
         line-height: 20px;
       }
     }
+
+    @include smallScreenDown {
+      .news__item {
+        .item__body {
+          display: block;
+        }
+
+        .item__footer {
+          text-align: left;
+        }
+
+        .item__thumb {
+          margin-bottom: 10px;
+          width: auto;
+          height: 0;
+          padding-top: 56.25%;
+        }
+
+        h3 {
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 13px;
+          line-height: 16px;
+        }
+      }
+    }
   }
 
   .row {
     align-items: center;
+  }
+  @include tabletScreenDown {
+    padding: 0;
   }
 }
 
@@ -428,6 +560,20 @@ h4 {
           }
         }
       }
+    }
+  }
+
+  @include smallScreenDown {
+    &__art {
+      margin: 0 auto -40px;
+    }
+    .name {
+      font-size: 24px;
+      line-height: 1;
+    }
+    .position {
+      font-size: 13px;
+      line-height: 16px;
     }
   }
 }
@@ -542,6 +688,10 @@ h4 {
           text-decoration: underline;
         }
       }
+    }
+
+    @include smallScreenDown {
+      margin-bottom: 20px;
     }
   }
 
@@ -658,6 +808,11 @@ h4 {
     background-size: auto 60px;
     position: absolute;
     left: 0;
+
+    @include smallScreenDown {
+      height: 30px;
+      background-size: auto 30px;
+    }
   }
 
   &:before {
@@ -922,6 +1077,26 @@ h4 {
       transform: rotate(180deg);
     }
   }
+
+  @include smallScreenDown {
+    padding: 20px 0;
+    &__header,
+    &__table {
+      margin: 0 -10px;
+    }
+
+    &__table table {
+      th {
+        padding: 5px;
+      }
+      tbody {
+        .book,
+        .busy {
+          padding: 5px;
+        }
+      }
+    }
+  }
 }
 .master {
   margin-bottom: 20px;
@@ -995,6 +1170,36 @@ h4 {
       background-color: $sec;
     }
   }
+
+  @include smallScreenDown {
+    &__img {
+      margin: 0 10px;
+      width: 64px;
+      height: 64px;
+      border-width: 2px;
+    }
+    &__name {
+      font-size: 18px;
+      line-height: 1;
+    }
+    &__price {
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    &__info {
+      border-radius: 0;
+      margin: 0 -10px;
+      border-left: 0;
+      border-right: 0;
+      font-size: 13px;
+      line-height: 16px;
+
+      &:after {
+        left: 47px;
+      }
+    }
+  }
 }
 
 .thumb {
@@ -1025,6 +1230,10 @@ h4 {
     background: url(../img/ornament_1.svg) repeat-x top center;
     background-size: auto 60px;
     margin-bottom: 20px;
+    @include smallScreenDown {
+      height: 30px;
+      background-size: auto 30px;
+    }
   }
   #map {
     width: 100%;
@@ -1227,7 +1436,7 @@ h4 {
   border-radius: 20px;
 
   &.sm {
-    width: 320px;
+    max-width: 320px;
   }
 
   &__header {

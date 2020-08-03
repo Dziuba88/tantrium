@@ -29,7 +29,10 @@ html(lang="en")
               li: a(href="#masters") МАСТЕРА
               li: a(href="#gallery") ГАЛЕРЕЯ
               li: a(href="#contacts") КОНТАКТЫ
+            a.auth(href="#loginform" data-show="popup") авторизация
             a.btn.primary(href="#booking"): span бронирование
+          .header__control: button.toggle: +icon('#mn')
+
     section.wellcome
       .ctn: .row
         .col.md-5: img.wellcome__img(src="assets/img/idol.png", alt="")
@@ -76,7 +79,7 @@ html(lang="en")
             .cabinet__body
               h4 КАБИНЕТ №1, "VIENNA"
               p Ковер, четыре мягких стула, два кресла, круглый стол, маркерная доска, чайный сервиз. 4-х секционный массажный стол.
-            .cabinet__footer: a.btn.primary(href=""): span бронирование
+            .cabinet__footer: a.btn.primary(href="#booking"): span бронирование
           .col.md-6.lg-3: .cabinet
             .cabinet__price 500 ₽/Час
             .cabinet__img(data-cabinet="assets/img/cabinet_2.jpg" data-name='КАБИНЕТ №2, "SANDAL"' data-small="500 ₽/Час"): img(src="assets/img/th_cabinet_2.jpg", alt="")
@@ -84,7 +87,7 @@ html(lang="en")
             .cabinet__body
               h4 КАБИНЕТ №2, "SANDAL"
               p Массажный кабинет. Массажный стол, мягкий ковер, низкий диван, стерео колонки.
-            .cabinet__footer: a.btn.primary(href=""): span бронирование
+            .cabinet__footer: a.btn.primary(href="#booking"): span бронирование
           .col.md-6.lg-3: .cabinet
             .cabinet__price 500 ₽/Час
             .cabinet__img(data-cabinet="assets/img/cabinet_3.jpg" data-name='КАБИНЕТ №3, "FUSION"' data-small="500 ₽/Час"): img(src="assets/img/th_cabinet_3.jpg", alt="")
@@ -92,7 +95,7 @@ html(lang="en")
             .cabinet__body
               h4 КАБИНЕТ №3, "FUSION"
               p Очень мягкий ковер, hi-fi система (6 колонок), большое зеркало (можно закрыть рулонной шторой), подушки, пледы. Массажный стол по запросу.
-            .cabinet__footer: a.btn.primary(href=""): span бронирование
+            .cabinet__footer: a.btn.primary(href="#booking"): span бронирование
           .col.md-6.lg-3: .cabinet
             .cabinet__price 800 ₽/Час
             .cabinet__img(data-cabinet="assets/img/cabinet_4.jpg" data-name='КАБИНЕТ №4, "ARAVIA"' data-small="800 ₽/Час"): img(src="assets/img/th_cabinet_4.jpg", alt="")
@@ -100,7 +103,7 @@ html(lang="en")
             .cabinet__body
               h4 КАБИНЕТ №4, "ARAVIA"
               p Сьют из двух комнат с душем. Очень мягкий ковер. Под ковром татами. Столик, два кресла.б подушки, пледы. HI-fi система. Массажный стол по запросу.
-            .cabinet__footer: a.btn.primary(href=""): span бронирование
+            .cabinet__footer: a.btn.primary(href="#booking"): span бронирование
     section#booking.section.booking
       .ctn
         img.booking__art.top(src="assets/img/ornament_2.svg", alt=$project)
@@ -108,7 +111,7 @@ html(lang="en")
         .section__header: h2: span Бронирование
         .section__subheader
           .row: .col.lg-8.md-10
-            p Чтобы самостоятельно бронировать кабинет, необходимо <a href="">зарегистрироваться</a>.
+            p Чтобы самостоятельно бронировать кабинет, необходимо <a href="#registerform" data-show="popup">зарегистрироваться</a>.
             p Затем позвоните по номеру телефона <a href="tel:+79850681139">+79850681139</a> администратору и подтвердите свои намерения.
         .booking__header
           .booking__calendar

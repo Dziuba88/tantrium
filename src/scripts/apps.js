@@ -29,6 +29,25 @@ $("a.disabled").click(function (e) {
     };
   }
 
+  $(".header .toggle").click(function () {
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active");
+      $(".header__content").removeClass("show");
+    } else {
+      $(this).addClass("active");
+      $(".header__content").addClass("show");
+    }
+  });
+
+  $(".header .toggle").blur(function () {
+    if ($(this).hasClass("active")) {
+      setTimeout(() => {
+        $(this).removeClass("active");
+        $(".header__content").removeClass("show");
+      }, 250);
+    }
+  });
+
   $('[data-show="popup"]').magnificPopup({ type: "inline" });
 
   $("[data-large]").magnificPopup({
