@@ -1,0 +1,64 @@
+// mobileScreen
+@mixin mobileScreen {
+  @media only screen and (max-width: #{$SmallScreen}) {
+    @content;
+  }
+}
+// smallScreen
+@mixin smallScreen {
+  @media only screen and (min-width: #{$SmallScreen + 1}) and (max-width: #{$TabletScreen}) {
+    @content;
+  }
+}
+@mixin smallScreenUp {
+  @media only screen and (min-width: #{$SmallScreen + 1}) {
+    @content;
+  }
+}
+@mixin smallScreenDown {
+  @media only screen and (max-width: #{$TabletScreen}) {
+    @content;
+  }
+}
+// TabletScreen
+@mixin tabletScreen {
+  @media only screen and (min-width: #{$TabletScreen + 1}) and (max-width: #{$MediumScreen}) {
+    @content;
+  }
+}
+@mixin tabletScreenUp {
+  @media only screen and (min-width: #{$TabletScreen + 1}) {
+    @content;
+  }
+}
+@mixin tabletScreenDown {
+  @media only screen and (max-width: #{$MediumScreen}) {
+    @content;
+  }
+}
+// MediumScreen
+@mixin mediumScreen {
+  @media only screen and (min-width: #{$MediumScreen + 1}) and (max-width: #{$LargeScreen}) {
+    @content;
+  }
+}
+@mixin mediumScreenUp {
+  @media only screen and (min-width: #{$MediumScreen + 1}) {
+    @content;
+  }
+}
+@mixin mediumScreenDown {
+  @media only screen and (max-width: #{$LargeScreen}) {
+    @content;
+  }
+}
+// LargeScreen
+@mixin largeScreen {
+  @media only screen and (min-width: #{$LargeScreen + 1}) {
+    @content;
+  }
+}
+
+@function colWidth($num) {
+  @return $num / $columns * 100%;
+}

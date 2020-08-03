@@ -1,0 +1,17 @@
+$blk: #1a1a1a !default;
+$drk: #222222 !default;
+$prm: #cc9933 !default;
+$sec: #ccad7b !default;
+$blk: #1a1a1a !default;
+$blk: #1a1a1a !default;
+$blk: #1a1a1a !default;
+$grd: linear-gradient(to right, $prm 0%, $sec 50%, $prm 100%) !default;
+
+// Media Query & Drid //
+$columns: 12 !default;
+$gutter: 20px !default;
+// ExtraSmallScreen                  <= 480px
+$SmallScreen: 480px !default; //     481px - 756px
+$TabletScreen: 756px !default; //    757px - 1000px
+$MediumScreen: 1000px !default; //   1001px - 1200px
+$LargeScreen: 1200px !default; //    >= 1201px

@@ -1,0 +1,122 @@
+.ctn {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 ($gutter / 2);
+
+  @include largeScreen {
+    width: $LargeScreen - $gutter;
+  }
+
+  @include mediumScreen {
+    width: $MediumScreen - $gutter;
+  }
+
+  @include tabletScreen {
+    width: $TabletScreen - $gutter;
+  }
+
+  @include smallScreenDown {
+    width: 100%;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 ($gutter / -2);
+}
+
+.col {
+  margin: 0;
+  padding: 0 ($gutter / 2);
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  &.xs {
+    @for $i from 1 through $columns {
+      &-#{$i} {
+        flex: 0 0 colWidth($i);
+        //flex-basis: colWidth($i);
+        max-width: colWidth($i);
+      }
+    }
+  }
+
+  @include tabletScreenUp {
+    &.sm {
+      @for $i from 1 through $columns {
+        &-#{$i} {
+          flex: 0 0 colWidth($i);
+          max-width: colWidth($i);
+        }
+      }
+    }
+  }
+
+  @include mediumScreenUp {
+    &.md {
+      @for $i from 1 through $columns {
+        &-#{$i} {
+          flex: 0 0 colWidth($i);
+          max-width: colWidth($i);
+        }
+      }
+    }
+  }
+
+  @include largeScreen {
+    &.lg {
+      @for $i from 1 through $columns {
+        &-#{$i} {
+          flex: 0 0 colWidth($i);
+          max-width: colWidth($i);
+        }
+      }
+    }
+  }
+
+  // OFFSETS
+  @include smallScreen {
+    &.oxs {
+      @for $i from 1 through ($columns - 1) {
+        &-#{$i} {
+          margin-left: colWidth($i);
+        }
+      }
+    }
+  }
+
+  @include tabletScreen {
+    &.osm {
+      @for $i from 1 through ($columns - 1) {
+        &-#{$i} {
+          margin-left: colWidth($i);
+        }
+      }
+    }
+  }
+
+  @include mediumScreen {
+    &.omd {
+      @for $i from 1 through ($columns - 1) {
+        &-#{$i} {
+          margin-left: colWidth($i);
+        }
+      }
+    }
+  }
+
+  @include largeScreen {
+    &.olg {
+      @for $i from 0 through ($columns - 1) {
+        &-#{$i} {
+          margin-left: colWidth($i);
+        }
+      }
+    }
+  }
+}
