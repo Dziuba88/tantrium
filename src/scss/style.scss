@@ -1210,12 +1210,19 @@ h4 {
       padding: 4px;
       border-radius: 18px;
       user-select: none;
+      text-decoration: none;
+      color: $sec;
+      transition: 0.15s ease-in-out;
+
+      &:hover {
+        color: $drk;
+        background-color: $prm;
+      }
 
       .icon {
         display: block;
         width: 24px;
         height: 24px;
-        fill: $sec;
         margin-right: 5px;
       }
 
