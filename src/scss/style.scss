@@ -1099,12 +1099,12 @@ h4 {
   }
 }
 .master {
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 
   &__header {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   &__img {
@@ -1147,7 +1147,7 @@ h4 {
 
   &__info {
     border: 2px solid $sec;
-    padding: 20px;
+    padding: 20px 20px 30px;
     position: relative;
     background-color: $blk;
     border-radius: 20px;
@@ -1158,16 +1158,104 @@ h4 {
       margin: 0;
     }
 
-    &:after {
-      content: "";
+    .counter {
       display: block;
-      width: 15px;
-      height: 15px;
-      transform: rotate(45deg);
+      text-align: center;
+      width: 28px;
+      height: 28px;
       position: absolute;
-      top: -7px;
-      left: 75px;
+      top: -15px;
+      left: 70px;
+      user-select: none;
+
+      span {
+        position: relative;
+        z-index: 1;
+        color: $drk;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 25px;
+        padding-top: 3px;
+        display: block;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        transform: rotate(45deg);
+        background-color: $sec;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+    }
+    .btn {
+      position: absolute;
+      bottom: -18px;
+      right: 20px;
+      border-radius: 18px;
+    }
+
+    .likes {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 20px;
+      bottom: -18px;
+      background-color: $drk;
+      border: 2px solid $sec;
+      padding: 4px;
+      border-radius: 18px;
+      user-select: none;
+
+      .icon {
+        display: block;
+        width: 24px;
+        height: 24px;
+        fill: $sec;
+        margin-right: 5px;
+      }
+
+      span {
+        display: block;
+        padding-right: 10px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__tags {
+    margin-bottom: 10px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        line-height: 1;
+        vertical-align: middle;
+        margin-right: 5px;
+        padding: 3px 0;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .tag {
+      display: block;
+      color: $drk;
       background-color: $sec;
+      font-size: 12px;
+      line-height: 14px;
+      padding: 2px 8px;
+      white-space: nowrap;
+      font-weight: 700;
+      border-radius: 9px;
     }
   }
 
@@ -1413,6 +1501,12 @@ h4 {
   }
 }
 
+#masters {
+  .row {
+    justify-content: space-around;
+  }
+}
+
 #gallery {
   .row {
     justify-content: space-around;
@@ -1555,6 +1649,101 @@ h4 {
         text-decoration: none;
         opacity: 0.75;
       }
+    }
+  }
+}
+
+.page {
+  padding-top: 114px;
+  padding-bottom: 60px;
+
+  &:before {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 60px;
+    content: "";
+    background: url(../img/ornament_1.svg) repeat-x top center;
+    background-size: auto 60px;
+
+    @include smallScreenDown {
+      height: 30px;
+      background-size: auto 30px;
+    }
+  }
+  @include tabletScreenDown {
+    padding-top: 0;
+    &:before {
+      margin-bottom: 20px;
+    }
+  }
+}
+.master__page {
+  h1 {
+    font-size: 36px;
+    font-weight: 100;
+    margin: 0 0 20px;
+  }
+
+  .master__tags {
+    margin-bottom: 20px;
+  }
+  .master__price {
+    font-size: 24px;
+    margin: 0 0 20px;
+  }
+  .master__info {
+    margin-bottom: 40px;
+  }
+  .master__gallery {
+    margin-bottom: 20px;
+    .thumb {
+      display: block;
+      overflow: hidden;
+      height: 0;
+      width: 100%;
+      padding-top: 100%;
+      position: relative;
+      margin: 0;
+      padding: 100% 0 0;
+      box-sizing: border-box;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+
+    .owl-carousel {
+      .owl-item {
+        box-sizing: border-box;
+        padding: 0 1px;
+      }
+      .owl-nav {
+        text-align: center;
+
+        button {
+          margin: 10px;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  .master__text {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+
+    p {
+      margin: 0 0 24px;
     }
   }
 }

@@ -120,6 +120,21 @@ $("a.disabled").click(function (e) {
     zoom: { enabled: true },
   });
 
+  $(".master__gallery").magnificPopup({
+    delegate: "a",
+    type: "image",
+    gallery: { enabled: true, tCounter: "" },
+    image: {
+      tError: '<a href="%url%">Фото #%curr%</a> не загружено.',
+      titleSrc: function (item) {
+        return (
+          item.el.data("name") + "<small>" + item.el.data("small") + "</small>"
+        );
+      },
+    },
+    zoom: { enabled: true },
+  });
+
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -138,6 +153,15 @@ $("a.disabled").click(function (e) {
     autoplay: true,
     autoplayTimeout: 10000,
     autoplayHoverPause: true,
+    nav: true,
+    dots: false,
+    navText,
+  });
+
+  $(".master__gallery .owl-carousel").owlCarousel({
+    items: 1,
+    margin: 20,
+    loop: true,
     nav: true,
     dots: false,
     navText,

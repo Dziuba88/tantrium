@@ -32,7 +32,6 @@ html(lang="en")
             a.auth(href="#loginform" data-show="popup") авторизация
             a.btn.primary(href="#booking"): span бронирование
           .header__control: button.toggle: +icon('#mn')
-
     section.wellcome
       .ctn: .row
         .col.md-5: img.wellcome__img(src="assets/img/idol.png", alt="")
@@ -397,17 +396,33 @@ html(lang="en")
               .master__img(data-master="assets/img/master_1.jpg" data-name='Александр Коган' data-small="5500 ₽/2,5 часа"): img(src="assets/img/th_master_1.jpg", alt="")
               .master__body
                 .master__name Александр Коган
+                .master__tags: ul
+                  li: span.tag #массаж
+                  li: span.tag #психолог
                 .master__price 5500 ₽/2,5 часа
             .master__info
-              p Тантра, мистическое и заманчивое слово. Чтоже это? Тантру практически не возможно описать словами, но тантру можно прочувствовать и осознание прийдет к вам. Как? С помощью практик, медитаций и конечно же массажа. Тантрический массаж, это возможность человека встретится с собой, со своим телом. Поднять давно забытые чувства первой влюбленности когда играет каждая клеточка твоего организма, когда захватывает дыхание и взгляд горит желанием жить и любить, когда чувствуется нега в каждом движении. Именно тогда ты свободен. Именно тогда ты любишь без ревности и боли. Тогда ты засыпаешь и просыпаешся  с радостью встречи нового дня.
+              span.counter: span 
+              p Тантра, мистическое и заманчивое слово. Чтоже это? Тантру практически не возможно описать словами, но тантру можно прочувствовать и осознание прийдет к вам...
+              .likes
+                +icon('#like')
+                span 574
+              a.btn.primary(href=""): span Читать далее ...
           .col.md-6: .master
             .master__header
               .master__img(data-master="assets/img/master_2.jpg" data-name='Анна Ахматова' data-small="5500 ₽/2,5 часа"): img(src="assets/img/th_master_2.jpg", alt="")
               .master__body
                 .master__name Анна Ахматова
+                .master__tags: ul
+                  li: span.tag #массаж
+                  li: span.tag #психолог
                 .master__price 7250-8000 ₽/ 2,5 часа
             .master__info
-              p Друзья, приглашаю вас на сессию тантрического массажа, который включает в себя различные методы и техники ( лаосские техники, аюрведический йога массаж, расслабление суставов и многое другое). Целью данного массажа является тотальное расслабление тела и Разума. Только через расслабленное состояния ума и тела течёт энергия. Иначе энергии нет или ее недостаточно для яркой, насыщенной жизни. Такой какой она должна быть у здорового, полноценного человека. Когда много забот и тревог, а удовольствия от жизни нет это не жизнь, а выживание. Если тело зажато, в нем есть напряжение, то есть напряжение и в жизни. 
+              span.counter
+              p Друзья, приглашаю вас на сессию тантрического массажа, который включает в себя различные методы и техники ( лаосские техники, аюрведический йога массаж, расслабление суставов и многое другое)...
+              .likes
+                +icon('#like')
+                span 574
+              a.btn.primary(href=""): span Читать далее ...
         .section__footer: a.btn.primary(href=""): span все мастера
     section#gallery.section
       .ctn
@@ -452,7 +467,6 @@ html(lang="en")
             li: a(href="") Политика безопасности
             li: a(href="") Пользовательское соглашение
             li: a(href="") Способы оплаты
-
     form#contactform.modal.mfp-hide
       .modal__header: span написать нам
       .modal__body
@@ -473,7 +487,6 @@ html(lang="en")
             label Текст сообщения
             textarea(name="message", cols="30", rows="10")
       .modal__footer: button(type="submit").btn.dark Отправить
-
     form#loginform.modal.mfp-hide.sm
       .modal__header: span Вход
       .modal__body
@@ -488,7 +501,6 @@ html(lang="en")
         .form__left
           a(href="#forgotform" data-show="popup") Забыли пароль?
       .modal__footer: button(type="submit").btn.dark Отправить
-
     form#registerform.modal.mfp-hide.sm
       .modal__header: span Регистрация
       .modal__body
@@ -507,7 +519,6 @@ html(lang="en")
           label Ваша почта
           input(type="email" name="mail")
       .modal__footer: button(type="submit").btn.dark Отправить
-
     form#forgotform.modal.mfp-hide.sm
       .modal__header: span Сброс пароля
       .modal__body
@@ -516,10 +527,6 @@ html(lang="en")
           label Ваша почта
           input(type="email" name="mail")
       .modal__footer: button(type="submit").btn.dark Отправить
-
-
-
-
     // SCRIPTS
     script(src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous")
     script(src="assets/js/app.min.js")
