@@ -1,5 +1,8 @@
 // @prepros-prepend carousel.js
 // @prepros-prepend popup.js
+// @prepros-prepend transition.js
+// @prepros-prepend collapse.js
+// @prepros-prepend dropdown.js
 
 var navText = [
   '<svg class="icon"><use xlink:href="assets/img/sprite.svg?#ap"></use></svg>',
