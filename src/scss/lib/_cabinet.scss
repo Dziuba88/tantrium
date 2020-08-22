@@ -32,6 +32,187 @@
     .dropdown {
       margin-bottom: 40px;
     }
+
+    .booktable {
+      border: 0;
+      width: 100%;
+      margin-bottom: 40px;
+      border-collapse: collapse;
+      color: $sec;
+
+      tr {
+        border-top: 1px solid $sec;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 5px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          width: 110px;
+          padding: 5px 0;
+        }
+      }
+
+      th {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 10px;
+      }
+
+      tbody {
+        .btn {
+          font-size: 10px;
+          text-transform: uppercase;
+          font-weight: 700;
+          padding: 7px 10px 5px;
+          width: 110px;
+        }
+
+        .success,
+        .danger {
+          font-size: 10px;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+
+        .success {
+          color: #aed581;
+        }
+
+        .danger {
+          color: #ef6c00;
+        }
+
+        .price {
+          font-size: 24px;
+          line-height: 1;
+          font-weight: 300;
+          color: $prm;
+        }
+
+        .date {
+          white-space: nowrap;
+          strong {
+            font-weight: 400;
+            color: $prm;
+          }
+        }
+        td {
+          &:first-child {
+            font-size: 16px;
+            color: $prm;
+          }
+        }
+      }
+
+      tfoot {
+        td {
+          padding-top: 20px !important;
+
+          &:last-child {
+            text-align: right;
+          }
+        }
+
+        .contacts {
+          display: inline-flex;
+          align-items: center;
+
+          a {
+            text-decoration: none;
+            white-space: nowrap;
+            transition: 0.15s linear;
+
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+
+          .phone {
+            font-size: 18px;
+            color: $prm;
+            font-weight: 300;
+            display: block;
+
+            span,
+            small {
+              display: block;
+              text-align: left;
+            }
+
+            small {
+              color: $prm;
+              font-size: 10px;
+              font-weight: 500;
+              text-transform: uppercase;
+            }
+          }
+          .wa {
+            display: block;
+            font-size: 32px;
+            color: $sec;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+
+    @include smallScreenDown {
+      .form__input,
+      .form__file,
+      .dropdown {
+        margin-bottom: 20px;
+      }
+      .booktable {
+        display: block;
+        margin: 0;
+        thead {
+          display: none;
+        }
+
+        tbody,
+        tfoot,
+        tr,
+        td {
+          display: block;
+          position: relative;
+
+          &:last-child {
+            width: 100%;
+            padding: 0;
+          }
+        }
+
+        tbody tr {
+          padding: 10px 0;
+        }
+
+        td {
+          width: 100%;
+          padding: 5px;
+
+          &:nth-child(4) {
+            position: absolute;
+            width: auto;
+            top: 0;
+            right: 0;
+          }
+        }
+
+        tfoot td {
+          text-align: center !important;
+          padding: 10px 0 0 !important;
+        }
+      }
+    }
   }
 
   &__page {
@@ -62,6 +243,19 @@
         font-size: 48px;
         line-height: 1;
       }
+
+      @include smallScreenDown {
+        padding: 10px;
+        .text {
+          font-size: 20px;
+
+          small {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+          }
+        }
+      }
     }
 
     p {
@@ -69,6 +263,20 @@
       a {
         color: $prm;
         text-decoration: underline;
+      }
+    }
+
+    @include smallScreenDown {
+      p {
+        margin-bottom: 20px;
+      }
+      .form__row {
+        display: block;
+        text-align: center;
+        .text {
+          margin: 0 0 10px;
+          padding: 0;
+        }
       }
     }
   }

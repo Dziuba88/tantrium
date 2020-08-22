@@ -131,7 +131,7 @@ html(lang="en")
           .cabinet__panel
             h3 мои бронирования
 
-            table
+            table.booktable
               thead
                 tr
                   th кабинет
@@ -139,7 +139,40 @@ html(lang="en")
                   th стоимость
                   th статус
                   th   
-
+              tbody
+                tr
+                  td КАБ. №1 VIENNA
+                  td <span class="date">24.08.2020 <strong>10:30</strong></span> - <span class="date">24.08.2020 <strong>14:30</strong></span>
+                  td: span.price 15000 ₽
+                  td: span.success оплачено
+                  td: a.btn.primary(href=""): span отменить бронь 
+                tr
+                  td КАБ. №2 SANDAL
+                  td <span class="date">24.08.2020 <strong>10:30</strong></span> - <span class="date">24.08.2020 <strong>14:30</strong></span>
+                  td: span.price 15000 ₽
+                  td: span.success оплачено
+                  td: a.btn.primary(href=""): span отменить бронь 
+                tr
+                  td КАБ. №3 FUSION
+                  td <span class="date">24.08.2020 <strong>10:30</strong></span> - <span class="date">24.08.2020 <strong>14:30</strong></span>
+                  td: span.price 15000 ₽
+                  td: span.danger завершен
+                  td  
+                tr
+                  td КАБ. №4 ARAVIA
+                  td <span class="date">24.08.2020 <strong>10:30</strong></span> - <span class="date">24.08.2020 <strong>14:30</strong></span>
+                  td: span.price 15000 ₽
+                  td: span.danger завершен
+                  td  
+              tfoot
+                tr
+                  td: a.btn.primary(href=""): span новое бронирование
+                  td(colspan="4")
+                    .contacts
+                      a.phone(href="tel:+79850681139")
+                        small бронированиe на день
+                        span +7 (985) 068 11 39
+                      a.wa(href="https://wa.me/+79850681139"): +icon('#wa')
 
 
     footer#contacts.footer
